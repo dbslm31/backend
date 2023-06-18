@@ -5,6 +5,7 @@ const bodyParser = require("body-parser");
 
 //Fichiers
 const listRoutes = require("./routes/listRoutes");
+const recipesRoutes = require("./routes/recipesRoutes");
 
 //Middlewares
 app.use(cors());
@@ -26,6 +27,7 @@ app.use((req, res, next) => {
 
 //Routes
 app.use("/menus", listRoutes);
+app.use("/recipes", recipesRoutes);
 
 app.use(bodyParser.json());
 
