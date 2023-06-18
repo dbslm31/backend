@@ -50,5 +50,5 @@ server.on("listening", () => {
 });
 
 app.listen(port, () => {
-  console.log("server's running on " + port);
+  console.log("server's running on port " + port);
 });
