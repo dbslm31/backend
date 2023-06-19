@@ -9,8 +9,7 @@ CREATE TABLE menulist (
 -- Création de la table menu
 CREATE TABLE menu (
     id SERIAL PRIMARY KEY,
-    menu_name VARCHAR(50),
-    menulist_id INT REFERENCES menulists(id),
+    recipe_url VARCHAR(255),
     recipe_id INT
 );
 
