@@ -1,17 +1,17 @@
 const express = require("express");
 const app = express();
 const cors = require("cors");
-const bodyParser = require("body-parser");
 
-//Fichiers
+// Fichiers
 const listRoutes = require("./routes/listRoutes");
 const recipesRoutes = require("./routes/recipesRoutes");
+const menuRoutes = require("./routes/menuRoutes");
 
-//Middlewares
+// Middlewares
 app.use(cors());
 app.use(express.json());
 
-//Pour éviter les erreurs CORS
+// Pour éviter les erreurs CORS
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader(
@@ -25,10 +25,9 @@ app.use((req, res, next) => {
   next();
 });
 
-//Routes
-app.use("/menus", listRoutes);
+// Routes
+app.use("/list", listRoutes);
 app.use("/recipes", recipesRoutes);
-
-app.use(bodyParser.json());
+app.use("/menu", menuRoutes);
 
 module.exports = app;
